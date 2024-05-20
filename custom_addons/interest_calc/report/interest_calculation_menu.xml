@@ -1,0 +1,15 @@
+
+
+<odoo>
+    
+
+    <record id="action_interest_calculation" model="ir.actions.act_window">
+        <field name="name">Interest Calculations</field>
+        <field name="res_model">interest.calculation</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem id="menu_interest_calculation" name="Interest Calculations" action="action_interest_calculation"/>
+
+    
+</odoo>

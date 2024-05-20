@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Form View -->
+    <record id="view_interest_calculation_form" model="ir.ui.view">
+        <field name="name">interest.calculation.form</field>
+        <field name="model">interest.calculation</field>
+        <field name="arch" type="xml">
+            <form string="Interest Calculation">
+                <sheet>
+                    <group>
+                        <field name="principal_amount"/>
+                        <field name="interest_rate"/>
+                        <field name="time_period"/>
+                        <field name="interest_type"/>
+                    </group>
+                    <notebook>
+                        <page string="Simple Interest">
+                            <field name="simple_interest"/>
+                        </page>
+                        <page string="Compound Interest">
+                            <field name="compound_interest"/>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Tree View -->
+    <record id="view_interest_calculation_tree" model="ir.ui.view">
+        <field name="name">interest.calculation.tree</field>
+        <field name="model">interest.calculation</field>
+        <field name="arch" type="xml">
+            <tree string="Interest Calculations">
+                <field name="principal_amount"/>
+                <field name="interest_rate"/>
+                <field name="time_period"/>
+                <field name="interest_type"/>
+                <field name="simple_interest"/>
+                <field name="compound_interest"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- Action for Tree View -->
+    <record id="action_interest_calculation_tree" model="ir.actions.act_window">
+        <field name="name">Interest Calculations</field>
+        <field name="res_model">interest.calculation</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- Menu Item for Interest Calculations -->
+    <menuitem id="menu_interest_calculation" name="Interest Calculations"  sequence="10"/>
+    <menuitem id="menu_interest_calculation_tree" name="Interest Calculations" parent="menu_interest_calculation" action="action_interest_calculation_tree"/>
+</odoo>
